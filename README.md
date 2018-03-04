@@ -1,7 +1,7 @@
 # react-navigation-sample
 Sample App for react-navigation
 
-![showcase](/docs/react-navigation-sample.gif?raw=true)
+![showcase](/docs/react-navigation-sample.gif)
 
 
 # Usage
