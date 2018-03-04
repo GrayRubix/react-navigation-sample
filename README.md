@@ -1,7 +1,7 @@
 # react-navigation-sample
 Sample App for react-navigation
 
-<img src="/docs/react-navigation-sample.gif"/>
+![showcase](/docs/react-navigation-sample.gif?raw=true)
 
 
 # Usage
