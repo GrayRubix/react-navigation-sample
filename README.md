@@ -1,4 +1,4 @@
-* Things has been changed too rapidly. This repo is obsolete now.
+*** Things has been changed too rapidly. This repo is obsolete now. ***
 
 # react-navigation-sample
 Sample App for react-navigation
