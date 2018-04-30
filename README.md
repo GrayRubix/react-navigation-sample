@@ -17,7 +17,7 @@ App(Modal Stack)
 ├─ Signed Out Page  
 ├─ Signed in Page(Tab)  
 │ ├─ Friend List Page  
-│ └─ Chat List Page ─> Chat Root Page  
+│ └─ Chat List Page ─> Chat Room Page ─> Advanced Page  
 └─ Photo Viewer Page  
 
 # Advanced Technique
