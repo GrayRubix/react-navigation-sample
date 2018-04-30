@@ -23,4 +23,4 @@ App(Modal Stack)
 # Advanced Technique
 
 ## Pop to Root
-See `AdvancedScreen.js`
+See `src/AdvancedScreen.js`
