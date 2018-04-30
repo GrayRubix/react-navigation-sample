@@ -13,7 +13,12 @@ export default class ChatScreen extends React.Component{
 
     render(){
         return (
-            <Text style={{margin:20, fontSize:24}}>{this.props.navigation.state.params.name}'s saying blah blah blah.</Text>
+            <View>
+                <Text style={{margin:20, fontSize:24}}>{this.props.navigation.state.params.name}'s saying blah blah blah.</Text>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('advanced', {keyGoBackToRoot:this.props.navigation.state.key})} style={{margin:20}}>
+                    <Text style={{color:'blue'}}>Advanced Technique</Text>
+                </TouchableOpacity>
+            </View>
         )
     }
 }

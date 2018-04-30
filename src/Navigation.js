@@ -10,6 +10,7 @@ import ChatScreen from './ChatScreen'
 import LoginScreen from './LoginScreen'
 import SettingScreen from './SettingScreen'
 import UserProfileScreen from './UserProfileScreen'
+import AdvancedScreen from './AdvancedScreen'
 
 //Tab
 const Tab = TabNavigator({
@@ -46,7 +47,8 @@ export const DrawerOpenButton = (props) => (
 //Stack
 const Stack = StackNavigator({
     root:{screen:Tab, navigationOptions:TabNavigationOptions},
-    chat:{screen:ChatScreen}
+    chat:{screen:ChatScreen},
+    advanced:{screen:AdvancedScreen}
 },{
     navigationOptions:StackNavigationOptions,
     transitionConfig:getSlideFromRightTransition
