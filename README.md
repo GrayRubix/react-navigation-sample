@@ -13,8 +13,7 @@ react-native run-android
 ```
 
 # Hierarchy
-App(Modal Stack)
-
+App(Modal Stack)  
 ├─ Signed Out Page  
 ├─ Signed in Page(Tab)  
 │ ├─ Friend List Page  
