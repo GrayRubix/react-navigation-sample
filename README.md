@@ -1,5 +1,3 @@
-*** Things has been changed too rapidly. This repo is now obsolete. ***
-
 # react-navigation-sample
 Sample App for react-navigation
 
