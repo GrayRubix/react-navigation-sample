@@ -1,4 +1,6 @@
-import { AppRegistry } from 'react-native';
-import Tab from './src/Navigation'
+import { AppRegistry, YellowBox } from 'react-native';
+import Navigation from './src/Navigation'
 
-AppRegistry.registerComponent('ReactNavigationSample', () => Tab);
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+
+AppRegistry.registerComponent('ReactNavigationSample', () => Navigation);

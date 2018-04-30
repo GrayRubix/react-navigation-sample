@@ -27,7 +27,7 @@ const Tab = TabNavigator({
 const TabNavigationOptions = (props) => ({
     title:'Sample App',
     headerStyle:{backgroundColor:'#4d3241', borderBottomColor: 'transparent', borderBottomWidth: 0, elevation: 0},
-    headerLeft:<DrawerOpenButton drawerNavigation={props.screenProps.drawerNavigation}/>
+    headerLeft:<DrawerOpenButton {...props} />
 })
 
 const StackNavigationOptions = (props) => ({
@@ -38,14 +38,14 @@ const StackNavigationOptions = (props) => ({
 })
 
 export const DrawerOpenButton = (props) => (
-    <TouchableOpacity onPress={() => props.drawerNavigation.navigate('DrawerOpen')}>
+    <TouchableOpacity onPress={() => props.navigation.navigate('DrawerOpen')}>
         <Image style={{marginLeft:15, width:24, height:24}} source={require('./../res/icon_hamburger.png')}/>
     </TouchableOpacity>
 )
 
 //Stack
 const Stack = StackNavigator({
-    root:{screen:(props) => <Tab screenProps={Object.assign(props.screenProps, {stackNavigation:props.navigation})}/>, navigationOptions:TabNavigationOptions},
+    root:{screen:Tab, navigationOptions:TabNavigationOptions},
     chat:{screen:ChatScreen}
 },{
     navigationOptions:StackNavigationOptions,
@@ -60,18 +60,19 @@ const Stack_Setting = StackNavigator({
 
 //Drawer
 const Drawer = DrawerNavigator({
-    main:{screen:(props) => <Stack screenProps={Object.assign(props.screenProps, {drawerNavigation:props.navigation})}/>},
-    setting:{screen:(props) => <Stack_Setting screenProps={Object.assign(props.screenProps, {drawerNavigation:props.navigation})}/>}
+    main:{screen:Stack},
+    setting:{screen:Stack_Setting}
 },{
     navigationOptions:{
-        drawerLockMode:'locked-closed'
+        drawerLockMode:'locked-closed',
     },
+    backBehavior:'none'
 })
 
 //Modal Stack (root)
 const ModalStack = StackNavigator({
     logout:{screen:LoginScreen},
-    login:{screen:(props) => <Drawer screenProps={{modalNavigation:props.navigation}}/>},
+    login:{screen:Drawer},
     userprofile:{screen:UserProfileScreen}
 },{
     mode:'modal',

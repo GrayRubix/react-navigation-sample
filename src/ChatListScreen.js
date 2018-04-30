@@ -1,5 +1,6 @@
 import React from 'react'
 import {FlatList, View, TouchableOpacity, Text, Image} from 'react-native'
+import {getAssetByFilename} from './Asset'
 
 export default class ChatListScreen extends React.Component{
 
@@ -12,18 +13,12 @@ export default class ChatListScreen extends React.Component{
         super();
 
         this.state = {
-            chatlist:[]
-        }
-    }
-
-    componentWillMount(){
-        this.setState({
             chatlist:[
-                {id:'0', name:'Sunki Baek', text:'When are your coming?', pic:require('./../res/pic1.jpg')},
-                {id:'1', name:'Comet Kim', text:'Hello buddy.', pic:require('./../res/pic2.jpg')},
-                {id:'2', name:'Bright Lee', text:'I\'m gonna get there at 3.', pic:require('./../res/pic3.jpg')}
+                {id:'0', name:'Sunki Baek', text:'When are your coming?', photoFilename:"pic1.jpg"},
+                {id:'1', name:'Comet Kim', text:'Hello buddy.', photoFilename:"pic2.jpg"},
+                {id:'2', name:'Bright Lee', text:'I\'m gonna get there at 3.', photoFilename:"pic3.jpg"}
             ]
-        })
+        }
     }
 
     render(){
@@ -33,9 +28,9 @@ export default class ChatListScreen extends React.Component{
                 keyExtractor={item => item.id}
                 renderItem={item => (
                     <TouchableOpacity 
-                        onPress={() => {this.props.screenProps.stackNavigation.navigate('chat', {name:item.item.name});}}
+                        onPress={() => {this.props.navigation.navigate('chat', {name:item.item.name, photoFilename:item.item.photoFilename});}}
                         style={{width:'100%', height:70, flexDirection:'row', paddingHorizontal:20, borderBottomWidth:1, borderColor:'#0002'}}>
-                        <Image style={{alignSelf:'center', resizeMode:'cover', width:50, height:50, borderRadius:25}} source={item.item.pic}/> 
+                        <Image style={{alignSelf:'center', resizeMode:'cover', width:50, height:50, borderRadius:25}} source={getAssetByFilename(item.item.photoFilename)}/> 
                         <View style={{alignSelf:'center', marginLeft:10}}>
                             <Text style={{color:'gray'}}>{item.item.name}</Text>
                             <Text>{item.item.text}</Text>
