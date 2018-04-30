@@ -14,12 +14,13 @@ react-native run-android
 
 # Hierarchy
 App(Modal Stack)
-├─ Signed Out Page
-├─ Signed in Page(Tab)
-│ ├─ Friend List Page
-│ └─ Chat List Page
-│....└ Chat Root Page
-└─ Photo Viewer Page
+
+├─ Signed Out Page  
+├─ Signed in Page(Tab)  
+│ ├─ Friend List Page  
+│ └─ Chat List Page  
+│....└ Chat Root Page  
+└─ Photo Viewer Page  
 
 # Advanced Technique
 
